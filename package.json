@@ -4,7 +4,8 @@
     "type": "module",
     "devDependencies": {
         "@types/bun": "latest",
-        "@types/dotenv": "^8.2.0"
+        "@types/dotenv": "^8.2.0",
+        "@types/qs": "^6.9.16"
     },
     "peerDependencies": {
         "typescript": "^5.0.0"

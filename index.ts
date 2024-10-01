@@ -14,6 +14,8 @@ import {
 import type { Hex } from "viem";
 import { privateKeyToAccount } from "viem/accounts";
 import { scroll } from "viem/chains";
+import qs from "qs";
+
 import { wethAbi } from "./abi/weth-abi";
 
 /* For the 0x Challenge on Scroll, implement the following
@@ -24,8 +26,6 @@ import { wethAbi } from "./abi/weth-abi";
 4. Display all sources of liquidity on Scroll
 
 */
-
-const qs = require("qs");
 
 // load env vars
 dotenv();
@@ -104,11 +104,11 @@ const main = async () => {
       ]);
       console.log("Approving Permit2 to spend WETH...", request);
       // set approval
-      const hash = await weth.write.approve(request.args);
-      console.log(
-        "Approved Permit2 to spend WETH.",
-        await client.waitForTransactionReceipt({ hash })
-      );
+      // const hash = await weth.write.approve(request.args);
+      // console.log(
+      //   "Approved Permit2 to spend WETH.",
+      //   await client.waitForTransactionReceipt({ hash })
+      // );
     } catch (error) {
       console.log("Error approving Permit2:", error);
     }
